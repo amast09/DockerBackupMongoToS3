@@ -29,7 +29,7 @@ Docker container that periodically backs up a Dockerized MongoDB Database to Ama
 
 ### Example:
 
-docker run \
+docker run -d \
 
 --name mongobackup \
 
