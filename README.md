@@ -1,4 +1,4 @@
-Backup Dockerized MongoDB to Amazon S3
+Backup MongoDB Docker to Amazon S3
 ===================
 
 Docker container that periodically backs up a Dockerized MongoDB Database to Amazon S3 using [s3cmd sync] (http://s3tools.org/s3cmd-sync)
