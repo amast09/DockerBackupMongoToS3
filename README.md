@@ -5,7 +5,7 @@ Docker container that periodically backs up a Dockerized MongoDB Database to Ama
 
 ### Usage:
 
-	docker run -d [OPTIONS] <docker_image>
+	docker run -d --link <linkedcontainer:linkedcontainer> [OPTIONS] <docker_image>
 
 ### Parameters:
 
@@ -19,7 +19,7 @@ Docker container that periodically backs up a Dockerized MongoDB Database to Ama
 <p>S3 Bucket name and path. Should end with trailing slash.</p>
 
 `-e MONGO_HOST=<MONGO_DATABASE_CONTAINER_NAME>`
-<p>The linked container name of the Dockerized MongoDB you want backed up.</p>
+<p>The linked container name of the Dockerized MongoDB you want backed up. Make sure it matches how you specified the docker --link option</p>
 
 ### Optional parameters:
 
