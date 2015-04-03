@@ -1,7 +1,7 @@
 Simple Docker Container to Backup MongoDB Docker Container to Amazon S3
 ===================
 
-Docker container that periodically backups a Dockerized MongoDB Database to Amazon S3 using [s3cmd sync] (http://s3tools.org/s3cmd-sync)
+Docker container that periodically backs up a Dockerized MongoDB Database to Amazon S3 using [s3cmd sync] (http://s3tools.org/s3cmd-sync)
 
 ### Usage
 
@@ -29,7 +29,7 @@ Docker container that periodically backups a Dockerized MongoDB Database to Amaz
 
 ### Example:
 
-sudo docker run -t \
+`sudo docker run -t \
     --name mongobackup \
     --link phantomdb:phantomdb \
     -e ACCESS_KEY=afvkjad34ad43kf4j5b6v7ald \
@@ -37,4 +37,4 @@ sudo docker run -t \
     -e S3_PATH=s3://backup-bucket/db-folder/ \
     -e MONGO_HOST=mongocontainer \
     -e INTERVAL=90d \
-    amast09/mongo_backup
+    amast09/mongo_backup`
