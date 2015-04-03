@@ -29,12 +29,12 @@ Docker container that periodically backs up a Dockerized MongoDB Database to Ama
 
 ### Example:
 
-docker run -t \
-    --name mongobackup \
-    --link phantomdb:phantomdb \
-    -e ACCESS_KEY=afvkjad34ad43kf4j5b6v7ald \
-    -e SECRET_KEY=adfklv34na343dfkv \
-    -e S3_PATH=s3://backup-bucket/db-folder/ \
-    -e MONGO_HOST=mongocontainer \
-    -e INTERVAL=90d \
-    amast09/mongo_backup
+docker run -t \</br>
+&nbsp;--name mongobackup \</br>
+&nbsp;--link phantomdb:phantomdb \</br>
+&nbsp;-e ACCESS_KEY=afvkjad34ad43kf4j5b6v7ald \</br>
+&nbsp;-e SECRET_KEY=adfklv34na343dfkv \</br>
+&nbsp;-e S3_PATH=s3://backup-bucket/db-folder/ \</br>
+&nbsp;-e MONGO_HOST=mongocontainer \</br>
+&nbsp;-e INTERVAL=90d \</br>
+&nbsp;amast09/mongo_backup
