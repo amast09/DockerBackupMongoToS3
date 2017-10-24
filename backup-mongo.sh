@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the backup file and archive names to use
-BACKUP_FILENAME="backup-"$(TZ=America/New_York date +"%Y-%b-%d__%H:%M:%S")
+BACKUP_FILENAME="backup-"$(TZ=America/New_York date +"%Y-%b-%d__%H-%M-%S")
 BACKUP_ARCHIVE_FILENAME=${BACKUP_FILENAME}.tar.gz
 # Define the S3 path
 S3_PATH=${S3_PATH:?"S3_PATH env variable is required"}
