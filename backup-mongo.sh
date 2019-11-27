@@ -7,7 +7,7 @@ MONGO_HOST=${1}
 S3_PATH=${2}
 
 # Dump the data from mongoDB into our backup file
-mongodump -h ${MONGO_HOST} -o ${BACKUP_FILENAME}
+mongodump --quiet -h ${MONGO_HOST} -o ${BACKUP_FILENAME}
 
 # Compress our result
 tar -zcvf ${BACKUP_ARCHIVE_FILENAME} ${BACKUP_FILENAME}
