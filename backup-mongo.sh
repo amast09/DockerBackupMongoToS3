@@ -10,7 +10,7 @@ S3_PATH=${2}
 mongodump --quiet -h ${MONGO_HOST} -o ${BACKUP_FILENAME}
 
 # Compress our result
-tar -zcvf ${BACKUP_ARCHIVE_FILENAME} ${BACKUP_FILENAME}
+tar -zcf ${BACKUP_ARCHIVE_FILENAME} ${BACKUP_FILENAME}
 
 # Transfer the archive to Amazon S3
 aws s3 cp ${BACKUP_ARCHIVE_FILENAME} ${S3_PATH}
