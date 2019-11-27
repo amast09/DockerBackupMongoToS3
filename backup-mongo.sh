@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the backup file and archive names to use
-BACKUP_FILENAME="backup-"$(date +%Y-%m-%dT%H:%M:%S%z)
+BACKUP_FILENAME="backup-"$(date +%m-%d-%Y_%H-%M%z)
 BACKUP_ARCHIVE_FILENAME=${BACKUP_FILENAME}.tar.gz
 MONGO_HOST=${1}
 S3_PATH=${2}
