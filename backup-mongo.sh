@@ -4,7 +4,7 @@
 BACKUP_FILENAME="backup-"$(date +%m-%d-%Y_%H-%M%z)
 BACKUP_ARCHIVE_FILENAME=${BACKUP_FILENAME}.tar.gz
 MONGO_HOST=${1}
-S3_PATH=${2}
+S3_PATH="s3://"${2}
 
 # Dump the data from mongoDB into our backup file
 mongodump --quiet -h ${MONGO_HOST} -o ${BACKUP_FILENAME}
@@ -13,7 +13,7 @@ mongodump --quiet -h ${MONGO_HOST} -o ${BACKUP_FILENAME}
 tar -zcf ${BACKUP_ARCHIVE_FILENAME} ${BACKUP_FILENAME}
 
 # Transfer the archive to Amazon S3
-aws s3 cp ${BACKUP_ARCHIVE_FILENAME} ${S3_PATH}
+aws s3 cp ${BACKUP_ARCHIVE_FILENAME} ${S3_PATH}/${BACKUP_ARCHIVE_FILENAME}
 
 # Clean up after ourselves, don't want this container to have a bunch of old backups in it
 rm -rf ${BACKUP_FILENAME}
